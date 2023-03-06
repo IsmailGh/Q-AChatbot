@@ -23,6 +23,7 @@ app.post("/ask", async (req, res) => {
     const response = await openai.createCompletion({
       model: "text-davinci-003",
       prompt,
+      max_tokens: 2048,
     });
     const completion = response.data.choices[0].text;
 
